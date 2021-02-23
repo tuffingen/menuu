@@ -10,15 +10,6 @@ public class menu {
     private JButton openButton;
     private JButton newButton;
 
-    public menu() {
-        newButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-    }
-
     public static void main(String[] args) {
         JFrame frame = new JFrame("menu");
         frame.setContentPane(new menu().panel1);
@@ -26,4 +17,27 @@ public class menu {
         frame.pack();
         frame.setVisible(true);
     }
+
+    public menu() {
+        JFrame frame = new JFrame("JFileChooser Popup");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        newButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               textArea1.setText("");
+            }
+        });
+
+
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showInputDialog("Filnamn?");
+            }
+
+
+        });
+    }
 }
+
+
